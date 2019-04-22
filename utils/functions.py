@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from views.project import Project
+from controllers.project import ProjectController
 
 
 def insert(option):
@@ -19,12 +20,21 @@ def list(option):
 
 
 def update(option):
-    print 'update', option
+
+    if option == 'projeto':
+        view = Project()
+        view.show_update_view()
 
 
 def delete(option):
-    print 'delete', option
+
+    if option == 'projeto':
+        view = Project()
+        view.show_delete_view()
 
 
 def export(option):
-    print 'export', option
+
+    if option == 'projeto':
+        ctrl = ProjectController()
+        ctrl.export()

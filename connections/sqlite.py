@@ -13,6 +13,7 @@ class Sqlite(object):
 
     def connect(self):
         self.conn = sqlite3.connect(self.dbname)
+        self.conn.row_factory = sqlite3.Row
         self.manage_database()
 
     def commit(self):
@@ -34,6 +35,3 @@ class Sqlite(object):
                        id INTEGER PRIMARY KEY,\
                        name VARCHAR(50),\
                        duration INTEGER)")
-
-        # CREATE TABLE ATIVIDADE
-        # cursor.execute("")
